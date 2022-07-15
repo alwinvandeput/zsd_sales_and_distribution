@@ -26,11 +26,9 @@ Methods:
   - Class with unit test: ZADB_ADOBE_DOCUMENT
 - ZEML - Email : https://github.com/alwinvandeput/zeml_email
   - Class with unit test: ZEML_EXTENDED_EMAIL_BO
+- ZBO  - Generic Business Object : https://github.com/alwinvandeput/zbo_generic_business_object
+- ZOPM - Classic Output Management : https://github.com/alwinvandeput/zopm_classic_output_management
 
 # Class with unit test
 Class ZSD_SALES_ORDER_BO contains unit test class UNIT_TEST. First turn all the test off and than test them each by each.
 
-# Dependent packages
-These packages can be installed after installing package ZSD.
-- ZBO  - Generic Business Object : https://github.com/alwinvandeput/zbo_generic_business_object
-- ZOPM - Classic Output Management : https://github.com/alwinvandeput/zopm_classic_output_management
