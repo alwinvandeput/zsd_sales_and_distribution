@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.9.20211220.1.16_SAP" APIVersion="3.6.21350.0"?><xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2022-07-15T10:15:21Z" uuid="341a7a37-45c0-4ffa-9781-483a325108b2">
+<template xmlns:xliff="urn:oasis:names:tc:xliff:document:1.1" xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <?formServer defaultPDFRenderFormat acrobat10.0dynamic?>
+   <subform layout="tb" locale="nl_NL" name="data" restoreState="auto">
+      <pageSet>
+         <pageArea id="Page1" name="Pagina1">
+            <contentArea h="271.6mm" w="197.3mm" x="6.35mm" y="19.05mm"/>
+            <medium long="297mm" short="210mm" stock="a4"/>
+            <draw h="12.7mm" name="Logo" w="58.247mm" x="66.675mm" y="3.175mm">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text xliff:rid="3ED6C5E4-448C-4BF0-90E9-F94710786CD1">** myCompany **</text>
+               </value>
+               <font size="20pt" typeface="Arial" weight="bold"/>
+               <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+               <para hAlign="center"/>
+               <?renderCache.bounds 162276 33166 0 0 1417 1417 0 0?>
+               <?renderCache.textRun 15 ** myCompany ** 0 1417 17208 0 0 0 "Arial" 1 0 20000 ISO-8859-1?></draw>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform layout="tb" minH="268.425mm" w="197.3mm">
+         <bind match="none"/>
+         <subform layout="tb" name="Head" w="197.3mm">
+            <bind match="none"/>
+            <subform layout="lr-tb" name="OrderNumber">
+               <bind match="none"/>
+               <field h="9mm" name="ORDER_NUMBER_LABEL" w="34.925mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Arial"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <text xliff:rid="8D1985E6-8AD0-44E4-97C8-15EDF2176204">Order number</text>
+                  </value>
+                  <bind match="dataRef" ref="$.DOCUMENT_DATA.LABELS.ORDER_NUMBER"/>
+               </field>
+               <field h="9mm" name="DOC_NUMBER" w="37mm">
+                  <ui>
+                     <textEdit>
+                        <border presence="hidden"/>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Arial" weight="bold"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <text maxChars="20"/>
+                  </value>
+                  <bind match="dataRef" ref="$.DOCUMENT_DATA.HEADER.DOC_NUMBER"/>
+                  <desc>
+                     <text name="Schema annotatie">Verkoopdocument</text>
+                  </desc>
+               </field>
+               <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="tb" name="Items" w="197.3mm">
+            <bind match="none"/>
+            <subform columnWidths="14.284mm 31.015mm 58.466mm 28.687mm 16.295mm 38.78mm" layout="table" name="ITEMS">
+               <subform id="overflowLeader_ID" layout="row" name="overflowLeader">
+                  <field name="ItemLabel">
+                     <ui>
+                        <textEdit>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para vAlign="middle"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner presence="hidden"/>
+                     </border>
+                     <value>
+                        <text xliff:rid="D796EAE2-645F-4B17-A831-EECF5CFB7274">Item</text>
+                     </value>
+                     <bind match="dataRef" ref="$record.DOCUMENT_DATA.LABELS.ITEM"/>
+                  </field>
+                  <field name="MaterialLabel">
+                     <ui>
+                        <textEdit>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para vAlign="middle"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner presence="hidden"/>
+                     </border>
+                     <value>
+                        <text xliff:rid="10E526F7-9775-45E6-B4E4-E3E639781E0A">Material</text>
+                     </value>
+                     <bind match="dataRef" ref="$record.DOCUMENT_DATA.LABELS.MATERIAL"/>
+                  </field>
+                  <field name="DescriptionLabel">
+                     <ui>
+                        <textEdit>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para vAlign="middle"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner presence="hidden"/>
+                     </border>
+                     <value>
+                        <text xliff:rid="7FC8988C-CCEC-4F42-B134-8E7C5D449972">Description</text>
+                     </value>
+                     <bind match="dataRef" ref="$record.DOCUMENT_DATA.LABELS.DESCRIPTION"/>
+                  </field>
+                  <assist role="TH"/>
+                  <occur max="-1"/>
+                  <bind match="none"/>
+                  <field name="QuantityLabel">
+                     <ui>
+                        <textEdit>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="right" vAlign="middle"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner presence="hidden"/>
+                     </border>
+                     <value>
+                        <text xliff:rid="4767E444-1ADD-45C7-A7D4-965061F7C460">Quantity</text>
+                     </value>
+                     <bind match="dataRef" ref="$record.DOCUMENT_DATA.LABELS.QUANTITY"/>
+                  </field>
+                  <field name="UnitLabel">
+                     <ui>
+                        <textEdit>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para vAlign="middle"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner presence="hidden"/>
+                     </border>
+                     <value>
+                        <text xliff:rid="481E461C-CAFA-4A4C-A1CE-2A505D81660D">Unit</text>
+                     </value>
+                     <bind match="dataRef" ref="$record.DOCUMENT_DATA.LABELS.UNIT"/>
+                  </field>
+                  <field name="NetAmountLabel">
+                     <ui>
+                        <textEdit>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="right" vAlign="middle"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner presence="hidden"/>
+                     </border>
+                     <value>
+                        <text xliff:rid="50CCAA41-B8B4-4943-B028-B7E7DA559D64">Net amount</text>
+                     </value>
+                     <bind match="dataRef" ref="$record.DOCUMENT_DATA.LABELS.NET_AMOUNT"/>
+                  </field>
+                  <border>
+                     <edge/>
+                     <edge presence="hidden"/>
+                     <edge/>
+                     <edge presence="hidden"/>
+                     <corner/>
+                  </border>
+                  <?templateDesigner expand 1?></subform>
+               <subform layout="row" name="DATA">
+                  <field h="9mm" name="ITM_NUMBER" w="62mm" x="2.440944in">
+                     <ui>
+                        <textEdit>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text maxChars="6"/>
+                     </value>
+                     <bind match="dataRef" ref="$.ITM_NUMBER"/>
+                     <desc>
+                        <text name="Schema annotatie">Verkoopdocumentpositie</text>
+                     </desc>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner presence="hidden"/>
+                     </border>
+                  </field>
+                  <field h="9mm" name="MATERIAL" w="62mm" x="4.881889in">
+                     <ui>
+                        <textEdit>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text maxChars="18"/>
+                     </value>
+                     <bind match="dataRef" ref="$.MATERIAL"/>
+                     <desc>
+                        <text name="Schema annotatie">Artikelnummer (18 tekens)</text>
+                     </desc>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner presence="hidden"/>
+                     </border>
+                  </field>
+                  <field h="9mm" name="SHORT_TEXT" w="62mm" y="0.354333in">
+                     <ui>
+                        <textEdit multiLine="1">
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <bind match="dataRef" ref="$.SHORT_TEXT"/>
+                     <desc>
+                        <text name="Schema annotatie">Korte tekst van klantorderpositie</text>
+                     </desc>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner presence="hidden"/>
+                     </border>
+                  </field>
+                  <assist role="TR"/>
+                  <occur max="-1"/>
+                  <bind match="dataRef" ref="$.DATA[*]"/>
+                  <field h="9mm" name="QUANTITY" w="62mm">
+                     <ui>
+                        <numericEdit>
+                           <margin/>
+                        </numericEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="right" vAlign="middle"/>
+                     <value>
+                        <decimal fracDigits="-1"/>
+                     </value>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner presence="hidden"/>
+                     </border>
+                     <bind match="dataRef" ref="$.QUANTITY"/>
+                     <format>
+                        <picture>num{zzzz9.zzz}</picture>
+                     </format>
+                  </field>
+                  <field h="9mm" name="UNIT" w="62mm">
+                     <ui>
+                        <textEdit>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para vAlign="middle"/>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner presence="hidden"/>
+                     </border>
+                     <bind match="dataRef" ref="$.UNIT"/>
+                  </field>
+                  <field h="9mm" name="NET_AMOUNT" w="67.3mm">
+                     <ui>
+                        <numericEdit>
+                           <margin/>
+                        </numericEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para hAlign="right" vAlign="middle"/>
+                     <value>
+                        <decimal fracDigits="-1"/>
+                     </value>
+                     <border>
+                        <edge presence="hidden"/>
+                        <corner presence="hidden"/>
+                     </border>
+                     <desc>
+                        <text name="Schema annotatie">Valutabedrag voor BAPI's (met 9 decimalen)</text>
+                     </desc>
+                     <validate nullTest="error"/>
+                     <bind match="dataRef" ref="$.NET_AMOUNT"/>
+                     <format>
+                        <picture>num{z,zzz,zz9.99}</picture>
+                     </format>
+                  </field>
+                  <border>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge/>
+                     <edge presence="hidden"/>
+                     <corner presence="hidden"/>
+                     <corner/>
+                     <corner/>
+                     <corner/>
+                  </border>
+                  <?templateDesigner expand 1?></subform>
+               <occur min="0"/>
+               <bind match="dataRef" ref="$.DOCUMENT_DATA.ITEMS"/>
+               <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="lr-tb" name="Totals" w="196.85mm">
+            <bind match="none"/>
+            <subform h="6.047mm" name="LeftTotals" w="117.475mm">
+               <bind match="none"/>
+            </subform>
+            <subform layout="tb" name="RightTotals" w="73.025mm">
+               <bind match="none"/>
+               <subform layout="lr-tb" name="NetAmount" w="100mm">
+                  <bind match="none"/>
+                  <field h="9mm" name="NET_AMOUNT_LABEL" w="31mm">
+                     <ui>
+                        <textEdit>
+                           <border presence="hidden"/>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para hAlign="right" vAlign="middle"/>
+                     <bind match="dataRef" ref="$.DOCUMENT_DATA.LABELS.NET_AMOUNT"/>
+                     <value>
+                        <text xliff:rid="EED4DF85-E86C-47F3-9094-44B4DE3BD352">Net amount</text>
+                     </value>
+                  </field>
+                  <field h="9mm" name="NET_AMOUNT" w="39mm">
+                     <ui>
+                        <numericEdit>
+                           <border presence="hidden"/>
+                           <margin/>
+                        </numericEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para hAlign="right" vAlign="middle"/>
+                     <value>
+                        <decimal fracDigits="-1"/>
+                     </value>
+                     <bind match="dataRef" ref="$.DOCUMENT_DATA.HEADER_PRICING.NET_AMOUNT"/>
+                     <desc>
+                        <text name="Schema annotatie">Valutabedrag voor BAPI's (met 9 decimalen)</text>
+                     </desc>
+                     <validate nullTest="error"/>
+                     <format>
+                        <picture>num{z,zzz,zz9.99}</picture>
+                     </format>
+                  </field>
+                  <?templateDesigner expand 1?></subform>
+               <subform columnWidths="31mm 39mm" layout="table" name="TAXES">
+                  <subform layout="row" name="DATA">
+                     <field name="PERCENTAGE" w="64mm">
+                        <ui>
+                           <numericEdit>
+                              <border presence="hidden"/>
+                              <margin/>
+                           </numericEdit>
+                        </ui>
+                        <font typeface="Arial"/>
+                        <margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+                        <para hAlign="right" vAlign="middle"/>
+                        <value>
+                           <decimal fracDigits="-1"/>
+                        </value>
+                        <?templateDesigner expand 1?>
+                        <border>
+                           <edge presence="hidden"/>
+                           <corner presence="hidden"/>
+                        </border>
+                        <bind match="dataRef" ref="$.PERCENTAGE"/>
+                        <desc>
+                           <text name="Schema annotatie">Valutabedrag voor BAPI's (met 9 decimalen)</text>
+                        </desc>
+                        <validate nullTest="error"/>
+                        <format>
+                           <picture>num{z,zzz,zz9.8}</picture>
+                        </format>
+                     </field>
+                     <field h="9mm" name="AMOUNT" w="62mm" x="2.440944in">
+                        <ui>
+                           <numericEdit>
+                              <margin/>
+                           </numericEdit>
+                        </ui>
+                        <font typeface="Arial"/>
+                        <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                        <para hAlign="right" vAlign="middle"/>
+                        <value>
+                           <decimal fracDigits="-1"/>
+                        </value>
+                        <bind match="dataRef" ref="$.AMOUNT"/>
+                        <desc>
+                           <text name="Schema annotatie">Valutabedrag voor BAPI's (met 9 decimalen)</text>
+                        </desc>
+                        <validate nullTest="error"/>
+                        <border>
+                           <edge presence="hidden"/>
+                           <corner presence="hidden"/>
+                        </border>
+                        <format>
+                           <picture>num{z,zzz,zz9.99}</picture>
+                        </format>
+                     </field>
+                     <assist role="TR"/>
+                     <occur max="-1"/>
+                     <bind match="dataRef" ref="$.DATA[*]"/>
+                     <?templateDesigner expand 1?></subform>
+                  <occur min="0"/>
+                  <bind match="dataRef" ref="$.DOCUMENT_DATA.HEADER_PRICING.TAXES"/>
+                  <overflow leader="overflowLeader1"/>
+                  <?templateDesigner expand 0?></subform>
+               <subform layout="lr-tb" name="GrossAmount" w="100mm">
+                  <bind match="none"/>
+                  <field h="9mm" name="Tekstveld1" w="31mm">
+                     <ui>
+                        <textEdit>
+                           <border presence="hidden"/>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para hAlign="right" vAlign="middle"/>
+                     <bind match="dataRef" ref="$.DOCUMENT_DATA.LABELS.GROSS_AMOUNT"/>
+                     <value>
+                        <text xliff:rid="57A7F18E-1233-4DBB-B7CA-9666F8FE1EE1">Gross amount</text>
+                     </value>
+                  </field>
+                  <field h="9mm" name="GROSS_AMOUNT" w="39mm">
+                     <ui>
+                        <numericEdit>
+                           <border presence="hidden"/>
+                           <margin/>
+                        </numericEdit>
+                     </ui>
+                     <font typeface="Arial"/>
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                     <para hAlign="right" vAlign="middle"/>
+                     <value>
+                        <decimal fracDigits="-1"/>
+                     </value>
+                     <bind match="dataRef" ref="$.DOCUMENT_DATA.HEADER_PRICING.GROSS_AMOUNT"/>
+                     <desc>
+                        <text name="Schema annotatie">Valutabedrag voor BAPI's (met 9 decimalen)</text>
+                     </desc>
+                     <validate nullTest="error"/>
+                     <format>
+                        <picture>num{z,zzz,zz9.88}</picture>
+                     </format>
+                     <border>
+                        <edge/>
+                        <edge presence="hidden"/>
+                        <edge/>
+                        <edge presence="hidden"/>
+                        <corner/>
+                     </border>
+                  </field>
+                  <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 0?></subform>
+            <?templateDesigner expand 1?></subform>
+         <?templateDesigner expand 1?></subform>
+      <proto/>
+      <desc>
+         <text name="version">11.0.9.20211220.1.2.0</text>
+      </desc>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Arial" 0 0 ISO-8859-1 4 100 25 00030027002A002C0030003100320034003800440045004600470048004C004F00500051005200530055005600570058005C DGIMNOQUabcdeilmnoprstuy?>
+      <?renderCache.subset "Arial" 1 0 ISO-8859-1 4 48 12 0003000D0026002A002F003200440050005100520053005C *CGLOamnopy?></subform>
+   <?templateDesigner DefaultPreviewDynamic 1?>
+   <?templateDesigner DefaultRunAt client?>
+   <?templateDesigner Grid show:1, snap:1, units:17, color:ff8080, origin:(0,0), interval:(79375,79375)?>
+   <?templateDesigner WidowOrphanControl 0?>
+   <?templateDesigner DefaultCaptionFontSettings face:Arial;size:10;weight:normal;style:normal?>
+   <?templateDesigner DefaultValueFontSettings face:Arial;size:10;weight:normal;style:normal?>
+   <?templateDesigner DefaultLanguage FormCalc?>
+   <?acrobat JavaScript strictScoping?>
+   <?templateDesigner FormTargetVersion 33?>
+   <?templateDesigner Zoom 92?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+      <common>
+         <template>
+            <base>https://DEMO-S4A.MYBRAND.NL:443/sap/bc/fp/form/layout/</base>
+         </template>
+      </common>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <pdf>
+         <!--  [0..n]  -->
+         <version>1.7</version>
+         <adobeExtensionLevel>8</adobeExtensionLevel>
+      </pdf>
+      <common>
+         <data>
+            <xsl>
+               <uri/>
+            </xsl>
+            <outputXSL>
+               <uri/>
+            </outputXSL>
+         </data>
+      </common>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+   <psMap>
+      <font posture="normal" psName="Bauhaus93" typeface="Bauhaus 93" weight="normal"/>
+      <font posture="normal" psName="CenturySchoolbook" typeface="Century Schoolbook" weight="normal"/>
+      <font posture="normal" psName="72Black" typeface="72 Black" weight="normal"/>
+   </psMap>
+</config>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.8/">
+   <xsdConnection dataDescription="data" name="ZSD_SALES_ORDER">
+      <uri/>
+      <rootElement>data</rootElement>
+   </xsdConnection>
+</connectionSet>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+   <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="data">
+      <data>
+         <DOCUMENT_DATA>
+            <HEADER>
+               <DOC_NUMBER/>
+            </HEADER>
+            <ITEMS dd:minOccur="0">
+               <DATA dd:maxOccur="-1">
+                  <DOC_NUMBER/>
+                  <ITM_NUMBER/>
+                  <MATERIAL/>
+                  <SHORT_TEXT/>
+                  <QUANTITY/>
+                  <UNIT/>
+                  <NET_AMOUNT/>
+               </DATA>
+            </ITEMS>
+            <HEADER_PRICING>
+               <NET_AMOUNT/>
+               <GROSS_AMOUNT/>
+               <TAXES dd:minOccur="0">
+                  <DATA dd:maxOccur="-1">
+                     <PERCENTAGE/>
+                     <AMOUNT/>
+                  </DATA>
+               </TAXES>
+            </HEADER_PRICING>
+            <LABELS>
+               <ORDER_NUMBER/>
+               <ITEM/>
+               <MATERIAL/>
+               <DESCRIPTION/>
+               <QUANTITY/>
+               <UNIT/>
+               <NET_AMOUNT/>
+               <GROSS_AMOUNT/>
+            </LABELS>
+         </DOCUMENT_DATA>
+      </data>
+   </dd:dataDescription>
+</xfa:datasets>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale desc="Dutch (Netherlands)" name="nl_NL">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>januari</month>
+            <month>februari</month>
+            <month>maart</month>
+            <month>april</month>
+            <month>mei</month>
+            <month>juni</month>
+            <month>juli</month>
+            <month>augustus</month>
+            <month>september</month>
+            <month>oktober</month>
+            <month>november</month>
+            <month>december</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>jan</month>
+            <month>feb</month>
+            <month>mrt</month>
+            <month>apr</month>
+            <month>mei</month>
+            <month>jun</month>
+            <month>jul</month>
+            <month>aug</month>
+            <month>sep</month>
+            <month>okt</month>
+            <month>nov</month>
+            <month>dec</month>
+         </monthNames>
+         <dayNames>
+            <day>zondag</day>
+            <day>maandag</day>
+            <day>dinsdag</day>
+            <day>woensdag</day>
+            <day>donderdag</day>
+            <day>vrijdag</day>
+            <day>zaterdag</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>zo</day>
+            <day>ma</day>
+            <day>di</day>
+            <day>wo</day>
+            <day>do</day>
+            <day>vr</day>
+            <day>za</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE D MMMM YYYY</datePattern>
+         <datePattern name="long">D MMMM YYYY</datePattern>
+         <datePattern name="med">D-MMM-YYYY</datePattern>
+         <datePattern name="short">D-M-YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS' uur' Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$ z,zz9.99s</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping">.</numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">€</currencySymbol>
+         <currencySymbol name="isoname">EUR</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+         <typeface name="Adobe Devanagari"/>
+      </typefaces>
+   </locale>
+</localeSet>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c015 81.161580, 2017/12/01-01:38:21        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:desc="http://ns.adobe.com/xfa/promoted-desc/" rdf:about="">
+         <xmp:MetadataDate>2022-07-15T10:15:21Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+         <xmpMM:DocumentID>uuid:341a7a37-45c0-4ffa-9781-483a325108b2</xmpMM:DocumentID>
+         <desc:version rdf:parseType="Resource">
+            <rdf:value>11.0.9.20211220.1.2.0</rdf:value>
+            <desc:ref>/template/subform[1]</desc:ref>
+         </desc:version>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

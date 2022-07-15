@@ -1,0 +1,137 @@
+<xsl:transform version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:sap="http://www.sap.com/sapxsl"
+  xmlns:asx="http://www.sap.com/abapxml"
+  xmlns:eml="http://www.mycompany.com/abapxml"
+  exclude-result-prefixes="asx eml">
+<xsl:import sap:name="ZEML_EXAMPLE_SO_CSS_STYLE"/>
+<xsl:import sap:name="ZEML_VALUE_FORMATTER"/>
+
+<xsl:output method="html" indent="yes"/>
+
+<xsl:strip-space elements="*"/>
+
+<xsl:template match="asx:values">
+
+<html>
+
+<head>
+
+  <title>
+    <xsl:value-of select="LABEL/ORDER_NO"/>
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="CONTENT/HEADER/ORDER_NO"/>
+  </title>
+
+  <style>
+    <xsl:call-template name="EXAMPLE_SO_CSS_STYLE"/>
+  </style>
+
+</head>
+
+<body>
+
+  <table class="center main1 content" style="table-layout: auto; width: 700px;" cellpadding="0" cellspacing="0">
+
+    <tr>
+      <td class="no_frame_cell">
+
+        <table class="innertable" style="background-color: black; color: white;">
+          <tr>
+          <td width="300px" height="100px" class="logo">myCompany</td>
+          <td>
+            <table class="innertable" style="background-color: black; color: white;">
+              <tr>
+                <td class="text_label">
+                  <xsl:value-of select="LABEL/ORDER_NO"/>
+                  <xsl:text>: </xsl:text>
+                  <xsl:value-of select="CONTENT/HEADER/ORDER_NO"/>
+                </td>
+              </tr>
+              <tr>
+                <td class="text_label">
+                  <xsl:value-of select="LABEL/DATE"/>
+                  <xsl:text>: </xsl:text>
+                  <xsl:value-of select="eml:format_date(//asx:values/SETTINGS/COUNTRY_KEY, SYST/DATUM)"/>
+                  <xsl:text> </xsl:text>
+                  <!--
+                  <xsl:value-of select="eml:format_time(SYST/UZEIT, $time_format, false())"/>-->
+                </td>
+              </tr>
+            </table>
+          </td>
+          </tr>
+        </table>
+
+        <br/>
+
+        <table class="no_frame_cell" cellpadding="0">
+          <tr class="no_frame_cell">
+            <td class="frame_cell">
+              <table class="innertable" cellpadding="2" cellspacing="2">
+                <tr class="head">
+                  <th width="50px"  class="text_label"  ><xsl:value-of select="LABEL/ITEM_NO"/></th>
+                  <th width="300px" class="text_label"  ><xsl:value-of select="LABEL/DESCRIPTION"/></th>
+                  <th width="250px" class="number_label"><xsl:value-of select="LABEL/QUANTITY"/></th>
+                  <th width="50px"  class="text_label"  ><xsl:value-of select="LABEL/UNIT"/></th>
+                  <th width="150px" class="number_label"><xsl:value-of select="LABEL/NETT_AMOUNT"/></th>
+                </tr>
+
+                <xsl:for-each select="CONTENT/ITEMS/*">
+
+                  <tr>
+                    <td class="no_frame_cell">
+                      <xsl:value-of select="number(ITEM_NO)"/>
+                    </td>
+
+                    <td class="no_frame_cell">
+                      <xsl:value-of select="DESCRIPTION"/>
+                    </td>
+
+                    <td class="no_frame_cell amount_value" aligh="right">
+                      <xsl:value-of select="eml:format_decimal(//asx:values/SETTINGS/COUNTRY_KEY, QUANTITY, 2)"/>
+                    </td>
+
+                    <td class="no_frame_cell">
+                      <xsl:value-of select="UNIT"/>
+                    </td>
+
+                    <td class="no_frame_cell amount_value" aligh="right">
+                      <xsl:value-of select="eml:format_decimal(//asx:values/SETTINGS/COUNTRY_KEY, NETT_AMOUNT, 2)"/>
+                    </td>
+                  </tr>
+
+                </xsl:for-each>
+
+              </table>
+
+              <table class="innertable" cellpadding="2" cellspacing="2">
+                <tr>
+                  <td width="550px" class="no_frame_cell number_label">
+                    <xsl:value-of select="LABEL/TOTAL"/>
+                  </td>
+                  <td width="150px" class="no_frame_cell amount_value total_cell" >
+                    <xsl:value-of select="eml:format_decimal(//asx:values/SETTINGS/COUNTRY_KEY, CONTENT/HEADER/NETT_AMOUNT, 2)"/>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <br/>
+        <br/>
+        <p align="center"><xsl:value-of select="LABEL/FOOTER" disable-output-escaping="yes"/></p>
+
+      </td>
+    </tr>
+
+  </table>
+
+</body>
+
+</html>
+
+</xsl:template>
+
+</xsl:transform>
