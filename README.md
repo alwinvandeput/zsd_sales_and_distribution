@@ -1,11 +1,15 @@
 # ZSD - Sales and Distribution
-Install this code in package ZSD.
+First install the prerequirement packages and than this package.
+Install the code with https://abapgit.org.
 
-This package contains for now code about the Sales Order Business Object ZSD_SALES_ORDER_BO.
+This package contains code about the Sales Order Business Object ZSD_SALES_ORDER_BO.
 
-The functionality is limited to
+The functionality is for now limited to
 - Creating a Sales Order PDF document
 - Sending an Email with attached the Sales order PDF document
+
+For more information see SAP Blog post: 
+https://blogs.sap.com/2022/05/27/abap-oo-design-part-7-step-3-reuse-optimization-example-send-sales-order-document-by-email-to-customer/
 
 # Creating a Sales Order PDF document
 Methods:
@@ -17,7 +21,7 @@ Methods:
 - ZSD_SALES_ORDER_BO_I~CREATE_EMAIL
 - ZOPM_OUTP_EXTERNAL_SEND_I~EXECUTE
 
-# Prerequirements packages
+# Prerequirement packages
 - ZEXC - Exception : https://github.com/alwinvandeput/zexc_exception
 - ZTXD - SAPscript texts : https://github.com/alwinvandeput/ztxd_sapscript_texts
   - Class with unit test: ZTXD_TEXT_OBJECT
